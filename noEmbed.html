@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>no Video Embed</title>
+    <style>
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 565px;
+            margin: auto;
+        }
+        .thumbnail {
+            width: 100%;
+            cursor: pointer;
+        }
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 50%;
+        }
+        .video-iframe {
+          width: 100%;
+            height: 315px;
+        }
+    </style>
+</head>
+<body>
+    <h1>No Video Embed Test</h1>
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/lJIrF4YjHfQ?si=O8Djk0thHJH59y-d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    
+</html>
