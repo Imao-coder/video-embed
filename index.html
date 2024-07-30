@@ -1,57 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lazy Load Video Embed</title>
+    <title> Lazy Load Video Embed </title>
     <style>
-        .video-wrapper {
+        .video-container {
             position: relative;
-            width: 560px; /* Example width */
-            height: 315px; /* Example height */
-            background: #000;
-            cursor: pointer;
+            width: 100%;
+            max-width: 560px;
+            margin: auto;
         }
         .thumbnail {
             width: 100%;
-            height: 100%;
-            display: block;
+            cursor: pointer;
         }
         .play-button {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 68px; /* Example size */
-            height: 48px;
-            background: url('https://www.youtube.com/yts/img/yt_1200-vfl4C3T0K.png') no-repeat;
-            background-position: -128px -16px; /* Example position for play button */
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 50%;
+        }
+        .video-iframe {
+            display: none;
+            width: 100%;
+            height: 315px;
         }
     </style>
 </head>
 <body>
+    <h1>Video Embed Test</h1>
+    <div class="video-container">
+        <img src="thumbnail.jpg" alt="Video Thumbnail" class="thumbnail" id="video-thumbnail">
+        <button class="play-button" id="play-button">▶</button>
+        <iframe id="video-iframe" class="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    
+    <script>
+        document.getElementById('play-button').addEventListener('click',function() {
+            var iframe = document.getElementById('video-iframe');
+            iframe.src = 'https://www.youtube.com/embed/lJIrF4YjHfQ?si=387XiIDqhOfhcU1j&autoplay=1';
+            iframe.style.display = 'block';
+            document.getElementById('video-thumbnail').style.display = 'none';
+            this.style.display = 'none';
 
-<div class="video-wrapper" id="videoWrapper" data-video-id="dQw4w9WgXcQ">
-    <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" class="thumbnail" alt="Video Thumbnail">
-    <div class="play-button"></div>
-</div>
-
-<script>
-    document.getElementById('videoWrapper').addEventListener('click', function() {
-        var videoId = this.getAttribute('data-video-id');
-        var iframe = document.createElement('iframe');
-        iframe.setAttribute('width', '560');
-        iframe.setAttribute('height', '315');
-        iframe.setAttribute('src', 'https://www.youtube.com/embed/yOG7SLqRXRE?si=qqX2tEmTCzDNYkxx' + videoId + '?autoplay=1');
-        iframe.setAttribute('frameborder', '0');
-        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-        iframe.setAttribute('allowfullscreen', true);
-
-        // Replace the thumbnail and play button with the iframe
-        this.innerHTML = '';
-        this.appendChild(iframe);
-    });
-</script>
-
+        });
+    </script>
 </body>
 </html>
