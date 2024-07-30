@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title> Lazy Load Video Embed </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A page to test lazy loading of video embeds.">
     <style>
         .video-container {
             position: relative;
@@ -13,6 +14,8 @@
             width: 100%;
             cursor: pointer;
         }
+        .play-button_1
+        .play-button_2,
         .play-button {
             position: absolute;
             top: 50%;
@@ -36,11 +39,38 @@
 <body>
     <h1>Video Embed Test</h1>
     <div class="video-container">
-        <img src="thumbnail.jpg" alt="Video Thumbnail" class="thumbnail" id="video-thumbnail">
+        <img src="thumbnail.jpg" alt="Video Thumbnail" class="thumbnail" id="video-thumbnail" loading="lazy">
+        <button class="play-button" id="play-button">▶</button>
+        <iframe id="video-iframe" class="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div class="video-container">
+        <img src="thumbnail.jpg" alt="Video Thumbnail" class="thumbnail" id="video-thumbnail" loading="lazy">
+        <button class="play-button_1" id="play-button">▶</button>
+        <iframe id="video-iframe_1" class="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video-container">
+        <img src="thumbnail.jpg" alt="Video Thumbnail" class="thumbnail" id="video-thumbnail" loading="lazy">
+        <button class="play-button_2" id="play-button">▶</button>
+        <iframe id="video-iframe_2" class="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video-container">
+        <img src="thumbnail.jpg" alt="Video Thumbnail" class="thumbnail" id="video-thumbnail" loading="lazy">
+        <button class="play-button" id="play-button">▶</button>
+        <iframe id="video-iframe" class="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video-container">
+        <img src="thumbnail.jpg" alt="Video Thumbnail" class="thumbnail" id="video-thumbnail" loading="lazy">
+        <button class="play-button" id="play-button">▶</button>
+        <iframe id="video-iframe" class="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video-container">
+        <img src="thumbnail.jpg" alt="Video Thumbnail" class="thumbnail" id="video-thumbnail" loading="lazy">
         <button class="play-button" id="play-button">▶</button>
         <iframe id="video-iframe" class="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     
+
     <script>
         document.getElementById('play-button').addEventListener('click',function() {
             var iframe = document.getElementById('video-iframe');
@@ -50,6 +80,7 @@
             this.style.display = 'none';
 
         });
+
     </script>
 </body>
 </html>
